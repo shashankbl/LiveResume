@@ -1,0 +1,303 @@
+:root {
+    --bg-color: #e5e5e5;
+    --paper-bg: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --accent-color: #000000; /* No colorful accents in strict LaTeX by default */
+    --border-color: #000000;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", Times, serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.3; /* Re-aligned globally for WYSIWYG */
+    font-size: 11pt; /* Classic LaTeX base size */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Controls Header (Web Only) */
+.controls {
+    position: sticky;
+    top: 0;
+    padding: 16px 24px;
+    background: rgba(229, 229, 229, 0.9);
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #111;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 11pt;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background-color: #000;
+}
+
+.font-toggle-group {
+    display: flex;
+    border: 1px solid #999;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.font-opt {
+    background: none;
+    border: none;
+    padding: 3px 10px;
+    font-size: 8pt;
+    font-family: monospace;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.font-opt:not(:last-child) {
+    border-right: 1px solid #999;
+}
+
+.font-opt:hover {
+    background: #ddd;
+}
+
+.font-opt.active {
+    background: #333;
+    color: #fff;
+}
+
+body.sans-serif-font {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Resume Document Container */
+.resume-container {
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between pages strictly for web preview */
+}
+
+/* Individual Paper Pages */
+.page {
+    width: 8.5in;
+    height: 11in; /* Hardcoded US Letter height */
+    background-color: var(--paper-bg);
+    padding: 0.4in; /* 0.4 inch margins as requested */
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* LaTeX Typography Styles */
+.markdown-body {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
+/* Headers */
+.markdown-body h1, 
+.markdown-body h2, 
+.markdown-body h3, 
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    color: var(--text-primary);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Document Title (Name - if they use an H1) */
+.markdown-body h1 {
+    font-size: 12pt;
+    text-align: center;
+    margin-bottom: 8pt;
+    font-weight: normal;
+}
+
+/* ------------------------------- */
+/* Bulletproof Resume Header Logic */
+/* ------------------------------- */
+.resume-header {
+    text-align: center;
+    margin-bottom: 16pt;
+}
+
+.resume-header p {
+    text-align: center;
+    margin-bottom: 2pt;
+    white-space: pre-line;
+}
+
+.resume-header strong {
+    font-size: 12pt;
+    display: inline;
+}
+
+/* Kill the markdown double-break gap if it tries to inject a literal <br> */
+.resume-header br {
+    display: none;
+}
+
+/* Section Titles (now using h2) */
+.markdown-body h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    margin-top: 16pt;
+    margin-bottom: 8pt;
+    padding-bottom: 2pt;
+    border-bottom: 0.5pt solid var(--border-color);
+}
+
+/* Subsections / Company Names (now using h3) */
+.markdown-body h3 {
+    font-size: 11pt;
+    margin-top: 12pt;
+    margin-bottom: 4pt;
+}
+
+/* Role Titles (now using h4) */
+.markdown-body h4 {
+    font-size: 11pt;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 4pt;
+}
+
+/* Fallback for h5/h6 */
+.markdown-body h5,
+.markdown-body h6 {
+    font-size: 10pt;
+    margin-bottom: 4pt;
+}
+
+/* Paragraphs and Lists */
+.markdown-body p {
+    margin-bottom: 8pt;
+}
+
+.markdown-body ul, 
+.markdown-body ol {
+    margin-bottom: 8pt;
+    padding-left: 20pt;
+}
+
+.markdown-body li {
+    font-size: 10pt;
+    margin-bottom: 4pt;
+}
+
+.markdown-body li::marker {
+    font-size: 10pt; /* slightly smaller bullets often found in LaTeX */
+}
+
+/* Links: LaTeX commonly keeps links black or frames them, we will use plain text with thin underline or just blue if preferred. We'll use traditional plain black */
+.markdown-body a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px dotted #ccc;
+}
+
+.markdown-body a:hover {
+    border-bottom: 1px solid #000;
+}
+
+/* Bold and Italics */
+.markdown-body strong {
+    font-weight: bold;
+}
+
+.markdown-body em {
+    font-style: italic;
+}
+
+/* Custom $ syntax text */
+.small-text {
+    font-size: 9pt;
+}
+
+/* Loading state */
+.loader {
+    text-align: center;
+    font-style: italic;
+    padding: 40px;
+}
+
+/* Print optimizations (LaTeX standard letter/A4) */
+@media print {
+    @page {
+        margin: 0.4in; /* Strictly requested 0.4 inch print bounds */
+        size: letter;
+    }
+    
+    body {
+        background-color: transparent;
+    }
+    
+    .hide-on-print {
+        display: none !important;
+    }
+    
+    .resume-container,
+    .resume-wrapper {
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    .page {
+        margin: 0;
+        padding: 0 !important;
+        box-shadow: none;
+        height: auto;
+        overflow: visible;
+        width: 100%;
+    }
+
+    .page:not(:last-child) {
+        page-break-after: always;
+    }
+
+    .markdown-body h2 {
+        page-break-after: avoid;
+    }
+
+    .markdown-body h3 {
+        page-break-after: avoid;
+    }
+
+    .markdown-body p, 
+    .markdown-body li {
+        page-break-inside: avoid;
+    }
+}

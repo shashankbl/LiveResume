@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Shashank Bangalore Lakshman - Resume</title>
+    <meta name="title" content="Shashank Bangalore Lakshman - Resume">
+    <meta name="description" content="View and download the professional resume of Shashank Bangalore Lakshman. Built with LiveResume — a Markdown-to-PDF resume renderer for GitHub Pages.">
+    <meta name="keywords" content="resume, markdown, pdf, github pages, LiveResume, Shashank Bangalore Lakshman">
+    <meta name="author" content="Shashank Bangalore Lakshman">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shashank Bangalore Lakshman - Resume">
+    <meta property="og:description" content="View and download the professional resume of Shashank Bangalore Lakshman. Built with LiveResume — a Markdown-to-PDF resume renderer for GitHub Pages.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shashank Bangalore Lakshman - Resume">
+    <meta name="twitter:description" content="View and download the professional resume of Shashank Bangalore Lakshman. Built with LiveResume — a Markdown-to-PDF resume renderer for GitHub Pages.">
+
+    <!-- Computer Modern Web Font for LaTeX look -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css">
+    
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controls hide-on-print">
+        <div style="flex: 1; display: flex; justify-content: flex-start;">
+            <a href="https://shashankbl.github.io/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #333; font-weight: bold; border-bottom: 1px solid #333;">&larr; View Portfolio</a>
+        </div>
+        
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <span style="font-size: 10pt; color: #555; font-weight: bold; letter-spacing: 0.5px;">LiveResume v1.0 (7th April 2026)</span>
+            <span style="font-size: 8pt; color: #999; margin-top: 1px;">Author: Shashank Bangalore Lakshman</span>
+            <span style="font-size: 8pt; color: #999; margin-top: 1px;"><a href="https://github.com/shashankbl/resume/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" style="color: #999; text-decoration: none; border-bottom: 1px dotted #bbb;">MIT License</a></span>
+            <span id="updated-label" style="font-size: 8pt; color: #777; margin-top: 2px; font-weight: 500;"></span>
+        </div>
+
+        <div style="flex: 1; display: flex; flex-direction: row; justify-content: flex-end; align-items: center; gap: 10px;">
+            <div class="font-toggle-group">
+                <button class="font-opt active" data-font="serif">Serif</button>
+                <button class="font-opt" data-font="sans">Sans-serif</button>
+            </div>
+            <button id="downloadPdfBtn" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                Save as PDF
+            </button>
+        </div>
+    </div>
+    
+    <main class="resume-container">
+        <div id="resume-content" class="markdown-body">
+            <!-- Markdown content will be rendered here -->
+            <div class="loader">Loading resume...</div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
