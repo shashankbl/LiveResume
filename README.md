@@ -4,7 +4,8 @@
 [![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-black)](https://shashankbl.github.io/resume)
 
 **Author: Shashank Bangalore Lakshman**
-[Demo](https://shashankbl.github.io/LiveResume/)
+
+[**Demo**](https://shashankbl.github.io/LiveResume/)
 
 A lightweight, zero-dependency web app that renders a Markdown resume as a print-ready PDF in the browser — hosted for free on GitHub Pages.
 
